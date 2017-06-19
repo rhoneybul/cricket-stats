@@ -1,0 +1,29 @@
+{
+    "Years": ["2014/2015", "2015/2016", "2016/2017"],
+    "entities": {
+        "WA" : {
+            "id": 12,
+            "competition": "-1st Grade"
+        },
+        "QLD" : {
+            "id": 12832,
+            "competition": "my FootDr First Grade Competition"
+        },
+        "VIC" : {
+            "id": 3,
+            "competition": "Men's Premier Firsts" 
+        },
+        "NSW" : { 
+            "id": 4,
+            "competition": "First Grade"
+        },
+        "ACT" : {
+            "id": 3338,
+            "competition": "Premier:McDonald's ACT Premier Cricket - 1st Grade"
+        }, 
+        "SA" : {
+            "id": 25,
+            "competition": "West End One Day Cup"
+        }
+    }
+}

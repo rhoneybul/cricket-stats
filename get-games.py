@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import sys
 import json
+import datetime
 
 def init_driver():
     driver = webdriver.PhantomJS()
@@ -95,7 +96,7 @@ def main():
     games, idx  = get_all_data(driver)
     # write to file 
     write_data(games)
-    end_time = datetime.datetime.now()
+    print 'Process took: ' + str(datetime.datetime.now() - start_time)
 
 if __name__ == "__main__":
     main()

@@ -3,6 +3,7 @@ import sys
 import json
 import datetime
 import shutil
+import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
@@ -11,7 +12,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def init_driver():
-    driver = webdriver.Firefox()
+    path = "./geckodriver.exe"
+    driver = webdriver.Firefox('.')
     return driver
 
 def read_game_data():
@@ -67,7 +69,6 @@ def get_game_data(driver, gameNumber, totalNumber):
                     if i == 0:
                         displayOptions = driver.find_elements_by_css_selector('#drpFunction option')
                         for display in displayOptions:
-                            print display.text
                             if 'Ball by Ball' in display.text:
                                 display.click()
                     # displayOptions = driver.find_elements_by_css_selector("#drpFunction option")[1].click()
@@ -101,7 +102,7 @@ def write_game_data(gameData):
     shutil.copy('games-data.json', 'games-data-backup.json')
 
 def main():
-    sys.path.append("~/Desktop/")
+    # sys.path.append("C://Desktop/")
     driver = init_driver()
     games = read_games()
     gameData = read_game_data()
